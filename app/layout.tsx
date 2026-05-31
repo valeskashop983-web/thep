@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { Menu, Search, Send } from "lucide-react";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
@@ -18,10 +20,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="shell">
           <header className="topbar">
             <div className="topbar-inner">
+              <button className="menu-button" aria-label="Menu">
+                <Menu aria-hidden="true" />
+              </button>
               <Link href="/" className="brand">
-                <span className="brand-orb">TG</span>
-                <span>Index18</span>
+                <Image src="/reference/logo.png" alt="TGIndex" width={1920} height={1079} priority />
               </Link>
+              <form className="search-form">
+                <Search aria-hidden="true" />
+                <input placeholder="Buscar grupos..." aria-label="Buscar grupos" />
+              </form>
               <nav className="nav" aria-label="Primary navigation">
                 <Link href="/channels">Channels</Link>
                 <Link href="/groups">Groups</Link>
@@ -29,6 +37,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/ai-girlfriend">AI Girlfriend</Link>
                 <Link href="/advertise">Advertise</Link>
               </nav>
+              <Link href="/submit" className="submit-link">
+                <Send aria-hidden="true" />
+                Enviar Grupo
+              </Link>
               <Link href="/submit" className="login-button">
                 Entrar
               </Link>

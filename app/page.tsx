@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { Clock, Eye, Flame, Star, ThumbsUp } from "lucide-react";
 import { ListingSection } from "@/components/ListingSection";
 import { categories, directoryItems } from "@/lib/seed";
 import { websiteJsonLd } from "@/lib/seo";
@@ -17,22 +19,27 @@ export default function HomePage() {
       />
       <section className="hero">
         <div className="hero-copy">
-          <h1>Canais Telegram Brasil: Diretorio de Grupos Verificados</h1>
+          <h1>Canais Telegram Brasil</h1>
           <p>
-            Encontre canais, grupos e bots do Telegram organizados por categorias, destaque e
-            sinais de qualidade.
+            Diretorio de canais, grupos e bots verificados para descobrir comunidades no Telegram.
           </p>
         </div>
         <div className="hero-banner" aria-label="Destaque principal">
           <Link href="/channels" className="hero-cta">
-            Entrar agora
+            <Image src="/reference/btn-entrar-agora.png" alt="Entrar agora" width={1432} height={1920} priority />
           </Link>
         </div>
       </section>
 
-      <ListingSection title="Grupos em destaque" kicker="Mais bem avaliados" items={featured} variant="rail" />
+      <ListingSection
+        title="Grupos em destaque"
+        kicker="Mais bem avaliados"
+        items={featured}
+        variant="rail"
+        icon={<Star aria-hidden="true" />}
+      />
 
-      <section className="section category-strip">
+      <section className="section-block category-strip">
         <div className="section-head">
           <div>
             <h2>Canais e Grupos</h2>
@@ -40,23 +47,27 @@ export default function HomePage() {
         </div>
         <div className="tab-row" aria-label="Ordenar listagens">
           <Link href="/" className="tab active">
+            <Flame aria-hidden="true" />
             Em alta
           </Link>
           <Link href="/channels" className="tab">
+            <Clock aria-hidden="true" />
             Recentes
           </Link>
           <Link href="/groups" className="tab">
+            <Eye aria-hidden="true" />
             Mais vistos
           </Link>
           <Link href="/bots" className="tab">
-            Bots IA
+            <ThumbsUp aria-hidden="true" />
+            Mais votados
           </Link>
         </div>
       </section>
 
       <ListingSection title="Em alta" items={directoryItems} />
 
-      <section className="section">
+      <section className="section-block">
         <div className="section-head">
           <div>
             <h2>Categorias</h2>

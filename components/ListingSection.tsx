@@ -6,19 +6,28 @@ type Props = {
   items: DirectoryItem[];
   kicker?: string;
   variant?: "grid" | "rail";
+  icon?: React.ReactNode;
 };
 
-export function ListingSection({ title, items, kicker, variant = "grid" }: Props) {
+export function ListingSection({ title, items, kicker, variant = "grid", icon }: Props) {
   return (
-    <section className="section">
+    <section className="section-block">
       <div className="section-head">
         <div>
-          <h2>{title}</h2>
+          <h2>
+            {icon}
+            {title}
+          </h2>
           {kicker ? <p>{kicker}</p> : null}
         </div>
-        <span>{items.length}</span>
+        {variant === "rail" ? (
+          <div className="rail-controls">
+            <button aria-label="Anterior">‹</button>
+            <button aria-label="Proximo">›</button>
+          </div>
+        ) : null}
       </div>
-      <div className={variant === "rail" ? "featured-rail" : "listing-grid"}>
+      <div className={variant === "rail" ? "premium-rail" : "groups-grid"}>
         {items.map((item) => (
           <ChannelCard key={item.slug} item={item} />
         ))}

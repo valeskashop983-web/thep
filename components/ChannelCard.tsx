@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Send, Star, Users } from "lucide-react";
 import type { DirectoryItem } from "@/lib/types";
 import { formatMembers } from "@/lib/seo";
 
@@ -8,25 +9,30 @@ type Props = {
 
 export function ChannelCard({ item }: Props) {
   return (
-    <article className="listing-card compact-card">
-      <Link href={`/item/${item.slug}`} className={`thumb thumb-${item.visual}`} aria-label={item.title}>
-        <span className="thumb-mark">{item.title.slice(0, 1)}</span>
-        {item.vip ? <span className="premium-ribbon">PREMIUM</span> : null}
-      </Link>
-      <div className="listing-copy">
-        <div className="listing-title-row">
-          <h3>
-            <Link href={`/item/${item.slug}`}>{item.title}</Link>
-          </h3>
-        </div>
-        <p>{item.tags[0] ?? item.kind}</p>
-        <div className="card-foot">
-          <span>{formatMembers(item.memberCount)}</span>
-          <a href={item.telegramUrl} rel="nofollow noopener noreferrer" className="join-mini">
+    <Link href={`/item/${item.slug}`} className="group-card">
+      <div className={`group-thumb thumb-${item.visual}`}>
+        <span className="thumb-letter">{item.title.charAt(0)}</span>
+        {item.vip ? (
+          <span className="premium-badge">
+            <Star aria-hidden="true" />
+            Premium
+          </span>
+        ) : null}
+      </div>
+      <div className="group-content">
+        <h3>{item.title}</h3>
+        <span className="category-pill">{item.tags[0] ?? item.kind}</span>
+        <div className="group-meta">
+          <span>
+            <Users aria-hidden="true" />
+            {formatMembers(item.memberCount)}
+          </span>
+          <span className="enter-chip">
             Entrar
-          </a>
+            <Send aria-hidden="true" />
+          </span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }
