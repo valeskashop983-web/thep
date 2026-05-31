@@ -19,5 +19,6 @@ export type DirectoryItem = {
   isAiRelated: boolean;
   qualityScore: number;
   vip?: boolean;
+  visual: "aqua" | "violet" | "rose" | "gold" | "steel" | "lime" | "coral" | "indigo";
   telegramUrl: string;
 };

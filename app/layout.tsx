@@ -19,7 +19,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <header className="topbar">
             <div className="topbar-inner">
               <Link href="/" className="brand">
-                Telegram Directory
+                <span className="brand-orb">TG</span>
+                <span>Index18</span>
               </Link>
               <nav className="nav" aria-label="Primary navigation">
                 <Link href="/channels">Channels</Link>
@@ -28,6 +29,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/ai-girlfriend">AI Girlfriend</Link>
                 <Link href="/advertise">Advertise</Link>
               </nav>
+              <Link href="/submit" className="login-button">
+                Entrar
+              </Link>
             </div>
           </header>
           {children}

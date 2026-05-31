@@ -46,6 +46,7 @@ export const directoryItems: DirectoryItem[] = [
     isAiRelated: true,
     qualityScore: 91,
     vip: true,
+    visual: "violet",
     telegramUrl: "https://t.me/example_luna_ai"
   },
   {
@@ -59,6 +60,7 @@ export const directoryItems: DirectoryItem[] = [
     isNsfw: false,
     isAiRelated: true,
     qualityScore: 87,
+    visual: "aqua",
     telegramUrl: "https://t.me/example_daily_ai_tools"
   },
   {
@@ -72,6 +74,7 @@ export const directoryItems: DirectoryItem[] = [
     isNsfw: false,
     isAiRelated: false,
     qualityScore: 82,
+    visual: "gold",
     telegramUrl: "https://t.me/example_founder_growth"
   },
   {
@@ -85,6 +88,7 @@ export const directoryItems: DirectoryItem[] = [
     isNsfw: false,
     isAiRelated: false,
     qualityScore: 78,
+    visual: "lime",
     telegramUrl: "https://t.me/example_maya_builds"
   },
   {
@@ -99,7 +103,50 @@ export const directoryItems: DirectoryItem[] = [
     isAiRelated: false,
     qualityScore: 74,
     vip: true,
+    visual: "rose",
     telegramUrl: "https://t.me/example_adult_index"
+  },
+  {
+    kind: "group",
+    slug: "private-ai-lounge",
+    title: "Private AI Lounge",
+    description: "Curated group for AI companion prompts, creator drops and safe roleplay discovery.",
+    categorySlug: "ai-girlfriend",
+    tags: ["AI", "Private", "Chat"],
+    memberCount: 31200,
+    isNsfw: false,
+    isAiRelated: true,
+    qualityScore: 85,
+    visual: "indigo",
+    telegramUrl: "https://t.me/example_private_ai_lounge"
+  },
+  {
+    kind: "bot",
+    slug: "automation-hub-bot",
+    title: "Automation Hub Bot",
+    description: "Telegram bot hub for workflow automations, alerts and AI-generated summaries.",
+    categorySlug: "telegram-bots",
+    tags: ["Bot", "Automation"],
+    memberCount: 14300,
+    isNsfw: false,
+    isAiRelated: true,
+    qualityScore: 80,
+    visual: "steel",
+    telegramUrl: "https://t.me/example_automation_hub"
+  },
+  {
+    kind: "channel",
+    slug: "verified-adult-radar",
+    title: "Verified Adult Radar",
+    description: "Adult-oriented discovery sample with verification, removal workflow and clear labels.",
+    categorySlug: "nsfw-telegram",
+    tags: ["18+", "Verified"],
+    memberCount: 50200,
+    isNsfw: true,
+    isAiRelated: false,
+    qualityScore: 76,
+    visual: "coral",
+    telegramUrl: "https://t.me/example_verified_adult"
   }
 ];
 

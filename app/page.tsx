@@ -16,27 +16,50 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }}
       />
       <section className="hero">
-        <h1>Telegram Channels, Groups and AI Bots</h1>
-        <p>
-          Discover active Telegram communities, AI companion bots, creator channels and high-signal
-          listings built for fast mobile browsing.
-        </p>
-        <div className="search-panel">
-          <input aria-label="Search Telegram listings" placeholder="Search channels, bots, groups..." />
-          <div className="quick-links">
-            {categories.slice(0, 4).map((category) => (
-              <Link key={category.slug} href={`/c/${category.slug}`}>
-                {category.name}
-              </Link>
-            ))}
+        <div className="hero-banner">
+          <div>
+            <span className="eyebrow">Diretorio Telegram</span>
+            <h1>Canais Telegram Brasil</h1>
+            <p>Comunidades, bots e grupos verificados em uma vitrine rapida para mobile.</p>
           </div>
+          <Link href="/channels" className="hero-cta">
+            Entrar agora
+          </Link>
         </div>
       </section>
 
+      <ListingSection title="Grupos em destaque" kicker="Mais bem avaliados" items={featured} variant="rail" />
+
+      <section className="section category-strip">
+        <div className="section-head">
+          <div>
+            <h2>Canais e Grupos</h2>
+          </div>
+        </div>
+        <div className="tab-row" aria-label="Ordenar listagens">
+          <Link href="/" className="tab active">
+            Em alta
+          </Link>
+          <Link href="/channels" className="tab">
+            Recentes
+          </Link>
+          <Link href="/groups" className="tab">
+            Mais vistos
+          </Link>
+          <Link href="/bots" className="tab">
+            Bots IA
+          </Link>
+        </div>
+      </section>
+
+      <ListingSection title="Em alta" items={directoryItems} />
+
       <section className="section">
         <div className="section-head">
-          <h2>Popular Categories</h2>
-          <span>{categories.length} hubs</span>
+          <div>
+            <h2>Categorias</h2>
+            <p>Hubs principais para indexacao e navegacao.</p>
+          </div>
         </div>
         <div className="category-grid">
           {categories.map((category) => (
@@ -48,10 +71,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
-      <ListingSection title="Featured Communities" items={featured} />
-      <ListingSection title="Trending AI Bots" items={trending} />
-      <ListingSection title="Recently Added" items={directoryItems} />
+      <ListingSection title="Bots e IA" kicker="Afiliados e alto valor comercial" items={trending} />
     </main>
   );
 }
