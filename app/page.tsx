@@ -16,12 +16,14 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }}
       />
       <section className="hero">
-        <div className="hero-banner">
-          <div>
-            <span className="eyebrow">Diretorio Telegram</span>
-            <h1>Canais Telegram Brasil</h1>
-            <p>Comunidades, bots e grupos verificados em uma vitrine rapida para mobile.</p>
-          </div>
+        <div className="hero-copy">
+          <h1>Canais Telegram Brasil: Diretorio de Grupos Verificados</h1>
+          <p>
+            Encontre canais, grupos e bots do Telegram organizados por categorias, destaque e
+            sinais de qualidade.
+          </p>
+        </div>
+        <div className="hero-banner" aria-label="Destaque principal">
           <Link href="/channels" className="hero-cta">
             Entrar agora
           </Link>

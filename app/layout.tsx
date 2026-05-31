@@ -35,6 +35,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </header>
           {children}
+          <footer className="site-footer">
+            <div>
+              <a>Politica de Privacidade</a>
+              <span>|</span>
+              <a>Termos de Uso</a>
+              <span>|</span>
+              <a>DMCA</a>
+              <span>|</span>
+              <a>Remocao de Links</a>
+              <span>|</span>
+              <a>Contato</a>
+            </div>
+            <p>© 2026 TGIndex18. Todos os direitos reservados.</p>
+          </footer>
         </div>
       </body>
     </html>
