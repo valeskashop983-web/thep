@@ -8,15 +8,20 @@
     padding: 0;
     box-sizing: border-box;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: #111111;
     color: white;
     font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
   }
 }
 
 @layer components {
+  /* Glows */
   .glow-red {
     position: absolute;
     top: -200px;
@@ -43,6 +48,8 @@
     pointer-events: none;
     z-index: 0;
   }
+
+  /* Cards */
   .glass-card {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -54,10 +61,71 @@
     box-shadow: 0 0 15px rgba(179, 27, 27, 0.2);
     transform: scale(1.02);
   }
+
+  /* Text */
   .gradient-text {
     background: linear-gradient(135deg, #b31b1b 0%, #0088cc 100%);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
   }
+
+  /* Buttons */
+  .btn-primary {
+    @apply bg-[#0088cc] hover:bg-[#0077b3] text-white px-4 sm:px-6 py-3 rounded-lg font-medium transition inline-flex items-center gap-2 whitespace-nowrap text-sm sm:text-base;
+  }
+
+  /* Hero */
+  .hero {
+    @apply relative min-h-screen flex items-center justify-center pt-32 pb-16 overflow-hidden;
+  }
+
+  .hero-content {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10 w-full;
+  }
+
+  .hero-text h1 {
+    @apply leading-tight;
+  }
+
+  .hero-text p {
+    @apply leading-relaxed;
+  }
+
+  .hero-buttons {
+    @apply flex flex-col sm:grid sm:grid-cols-2 gap-3;
+  }
+
+  /* Stats */
+  .stat-card {
+    @apply glass-card rounded-lg p-6 text-center;
+  }
+
+  .stat-number {
+    @apply text-3xl sm:text-4xl font-bold text-white mb-2;
+  }
+
+  .stat-label {
+    @apply text-sm text-gray-400 uppercase tracking-wider;
+  }
+
+  .stats-grid {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-4 mt-12;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
 }
