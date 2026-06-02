@@ -4,7 +4,7 @@ export default function HeroStats() {
   const stats = [
     { number: '+5K', label: 'GROUPS' },
     { number: '338', label: 'VISITING NOW' },
-    { number: '8,375,000', label: 'VIEWS' },
+    { number: '8,374,998', label: 'VIEWS' },
     { number: '+1.8M', label: 'ONLYFANS CREATORS' },
   ]
 
