@@ -70,47 +70,35 @@
     color: transparent;
   }
 
-  /* Buttons */
-  .btn-primary {
-    @apply bg-[#0088cc] hover:bg-[#0077b3] text-white px-4 sm:px-6 py-3 rounded-lg font-medium transition inline-flex items-center gap-2 whitespace-nowrap text-sm sm:text-base;
+  /* Buttons - Inline horizontal */
+  .btn-primary-inline {
+    @apply bg-[#0088cc] hover:bg-[#0077b3] text-white px-4 sm:px-5 py-2 sm:py-3 rounded-lg font-semibold transition inline-flex items-center gap-2 whitespace-nowrap text-xs sm:text-sm;
+  }
+
+  .hero-buttons-inline {
+    @apply flex flex-wrap justify-center gap-2 sm:gap-3;
   }
 
   /* Hero */
   .hero {
-    @apply relative min-h-screen flex items-center justify-center pt-32 pb-16 overflow-hidden;
-  }
-
-  .hero-content {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10 w-full;
-  }
-
-  .hero-text h1 {
-    @apply leading-tight;
-  }
-
-  .hero-text p {
-    @apply leading-relaxed;
-  }
-
-  .hero-buttons {
-    @apply flex flex-col sm:grid sm:grid-cols-2 gap-3;
+    @apply relative overflow-hidden;
   }
 
   /* Stats */
   .stat-card {
-    @apply glass-card rounded-lg p-6 text-center;
+    @apply glass-card rounded-lg p-4 sm:p-6 text-center;
   }
 
   .stat-number {
-    @apply text-3xl sm:text-4xl font-bold text-white mb-2;
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2;
   }
 
   .stat-label {
-    @apply text-sm text-gray-400 uppercase tracking-wider;
+    @apply text-xs text-gray-400 uppercase tracking-wider;
   }
 
   .stats-grid {
-    @apply grid grid-cols-2 md:grid-cols-4 gap-4 mt-12;
+    @apply grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 w-full;
   }
 }
 
