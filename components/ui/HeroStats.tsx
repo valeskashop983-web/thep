@@ -1,4 +1,3 @@
-
 import { Eye, Users, TrendingUp, Crown } from 'lucide-react'
 
 export default function HeroStats() {
